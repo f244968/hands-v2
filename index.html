@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>hands 推手計劃</title>
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="icons\css\all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    var jsImg=new Array(".\\images\\banner0.jpg",".\\images\\banner1.jpg",".\\images\\banner2.jpg",".\\images\\banner3.jpg");
+    var jsImg_len=jsImg.length;
+    var i=1;
+
+    function cleanStyle(){
+      document.getElementById("bannerIMG").style="none";
+    }
+
+    function changeIMG(c){
+      var bannerIMG=document.getElementById("bannerIMG");
+      i=c+1;
+      bannerIMG.src=jsImg[c];
+      bannerIMG.style="animation: showIMG 0.7s;";
+      var t=setTimeout("cleanStyle()",700);
+    }
+
+    setInterval("sequentialImg()",5000);
+    function sequentialImg(){
+      if(i>=jsImg_len) i=0;
+
+      var bannerIMG=document.getElementById("bannerIMG");
+      bannerIMG.src=jsImg[i];
+      bannerIMG.style="animation: showIMG 0.7s;";
+      var t=setTimeout("cleanStyle()",700);
+      i++;
+    }
+  </script>
+  <script>
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(this).scrollTop() > 40){
+          $('#topBtn').fadeIn();
+        } else{
+          $('#topBtn').fadeOut();
+        }
+      });
+
+      $("#topBtn").click(function(){
+        $('html ,body').animate({scrollTop : 0},800);
+      });
+    });
+  </script>
+  <script>
+    function myOnload() {
+      var cs = document.getElementById('copyrightStr');
+      var today = new Date();
+      cs.innerHTML = 'Copyright © '+today.getFullYear()+' HANDs Art Project. All rights reserved.';
+    }
+  </script>
+</head>
+<body onload="myOnload()">
+  <div class="topLine"></div>
+  <div class="mainPart1">
+    <div class="topMenuBar">
+      <div class="topLeftDiv">
+        <a class="" href="#">
+          <img class="logo" src=".\images\logo.png" alt="logo">
+        </a>
+      </div>
+      <div class="topMiddleDiv">
+        <a class="link" href="#">關於我們</a>
+        <a class="link" href="#">最新消息</a>
+        <a class="link" href="#">藝起推推</a>
+      </div>
+      <div class="topRightDiv">
+        <a class="link" href="#">登入/註冊</a>
+        <a class="link" href="#">語言</a>
+      </div>
+    </div>
+    <div class="topBanner">
+      <div class="strArea">
+        <div class="strArea_part1">
+          <h1>Theseus忒修斯《南國再見，南國》</h1>
+        </div>
+        <div class="strArea_part2">
+          <div class="strArea_line1"></div>
+          <div class="strArea_line2"></div>
+        </div>
+        <div class="strArea_part3">
+          <h1>— 專案募資中！</h1>
+        </div>
+      </div>
+      <div class="thumbnailArea">
+        <div class="thumbnail">
+          <img id="t1" onclick="changeIMG(0)" class="thumbnailIMG" src=".\images\banner0.jpg" alt="banner0">
+        </div>
+        <div class="thumbnail">
+          <img id="t2" onclick="changeIMG(1)" class="thumbnailIMG" src=".\images\banner1.jpg" alt="banner1">
+        </div>
+        <div class="thumbnail">
+          <img id="t3" onclick="changeIMG(2)" class="thumbnailIMG" src=".\images\banner2.jpg" alt="banner2">
+        </div>
+        <div class="thumbnail">
+          <img id="t4" onclick="changeIMG(3)" class="thumbnailIMG" src=".\images\banner3.jpg" alt="banner3">
+        </div>
+      </div>
+      <img id="bannerIMG" class="bannerImage" src=".\images\banner0.jpg" alt="banner">
+    </div>
+  </div>
+  <div class="mainPart2">
+    <div class="middle1">
+      <div class="middle1_top">
+        <h1>專訪報導</h1><h2>Report</h2>
+        <div class="titleLine1"></div>
+      </div>
+      <div class="middle1_bottom">
+        <div class="middle1_bottom_grid">
+          <div class="middle1_bottom_grid_part1">
+            <img class="" src=".\images\report1.png" alt="report1">
+          </div>
+          <div class="middle1_bottom_grid_part2">
+            <a class="" href="#">專訪. 你要逃，還是留下來把這裡變好？--《他們的故事》</a>
+          </div>
+          <div class="middle1_bottom_grid_part3">
+            <div class="middle1_bottom_grid_part3_left">
+              <h1>人物專訪</h1><h1>深入訪談</h1>
+            </div>
+            <div class="middle1_bottom_grid_part3_right">
+              <h1>1991.10.09</h1>
+            </div>
+          </div>
+        </div>
+        <div class="middle1_bottom_grid">
+          <div class="middle1_bottom_grid_part1">
+            <img class="" src=".\images\report2.png" alt="report2">
+          </div>
+          <div class="middle1_bottom_grid_part2">
+            <a class="" href="#">創作使彼此感受靈魂的溫度</a>
+          </div>
+          <div class="middle1_bottom_grid_part3">
+            <div class="middle1_bottom_grid_part3_left">
+              <h1>藝術創作</h1>
+            </div>
+            <div class="middle1_bottom_grid_part3_right">
+              <h1>2040.12.32</h1>
+            </div>
+          </div>
+        </div>
+        <div class="middle1_bottom_grid">
+          <div class="middle1_bottom_grid_part1">
+            <img class="" src=".\images\report3.png" alt="report3">
+          </div>
+          <div class="middle1_bottom_grid_part2">
+            <a class="" href="#">只要誠實面對，搞咱有什麼關係</a>
+          </div>
+          <div class="middle1_bottom_grid_part3">
+            <div class="middle1_bottom_grid_part3_left">
+              <h1>大話創作</h1><h1>影音報導</h1>
+            </div>
+            <div class="middle1_bottom_grid_part3_right">
+              <h1>2100.02.31</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="middle1_bottom_more">
+        <a class="link_more" href="#">MORE</a>
+      </div>
+    </div>
+  </div>
+  <div class="mainPart3">
+    <div class="middle2">
+      <div class="middle2_top">
+        <span class="middle2_top_about">關於</span><h1>推手計劃</h1><h2>About HANDs Art Project</h2>
+        <div class="titleLine2"></div>
+      </div>
+      <div class="middle2_bottom">
+        <h1>台灣是文化藝術產業的孕育推手，無論布袋戲、歌仔戲等傳統藝術，或是文學、流行音樂等流行文化，到雲門舞集、屏風表演班等當代藝術團體皆有斐然的成就，然而受到數位科技的衝擊，台灣文化藝術產業已面臨龐大的轉型挑戰，再加上如今肺炎疫情加劇，更讓文化藝術產業受到雙重夾擊。</h1>
+        <br>
+        <h1>有鑑於政府單位的補助有限且申請不易，因此推手計劃油然而生，邀請各個領域的有志之士，一起成為台灣文化藝術產業的推手，透過「推手計劃網」共同度過肺炎疫情的艱難時期，並期待能永續發揚台灣文化藝術，讓國際看見台灣的文化軟實力。</h1>
+      </div>
+      <div class="middle2_bottom_more">
+        <a class="link_more" href="#">了解更多推手計劃</a>
+      </div>
+    </div>
+  </div>
+  <div class="mainPart4">
+    <div class="middle3">
+      <div class="middle3_top">
+        <h1>加入計畫</h1><h2>Join us</h2>
+        <div class="titleLine1"></div>
+      </div>
+      <div class="middle3_bottom">
+        <div class="middle3_bottom_left">
+          <div class="middle3_bottom_left_top">
+            <img class="" src=".\images\girl.png" alt="girl">
+            <h1>我是藝文工作者</h1>
+            <h2>填寫問卷，讓我們了解你/妳，也幫助我們做得更好</h2>
+          </div>
+          <div class="middle3_bottom_left_bottom">
+            <a class="fillIn" href="#">填寫問券</a>
+          </div>
+        </div>
+        <div class="middle3_bottom_right">
+          <div class="middle3_bottom_right_top">
+            <img class="" src=".\images\boy.png" alt="boy">
+            <h1>我要幫助推手計劃</h1>
+            <h2>無論你/妳有任何十八般武藝，都能為我們的計劃貢獻一己之力</h2>
+          </div>
+          <div class="middle3_bottom_right_bottom">
+            <a class="fillIn" href="#">填寫表單</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainPart5">
+    <div class="middle4">
+      <div class="middle4_p1">
+        <h1 class="middle4_title">關於我們</h1>
+        <div class="titleLine3"></div>
+        <a class="middle4_link" href="#">關於推手計劃</a><br>
+        <a class="middle4_link" href="#">團隊介紹</a><br>
+        <a class="middle4_link" href="#">短中長期目標</a>
+      </div>
+      <div class="middle4_p2">
+        <h1 class="middle4_title">最新消息</h1>
+        <div class="titleLine3"></div>
+        <a class="middle4_link" href="#">最新動態</a><br>
+        <a class="middle4_link" href="#">專訪報導</a><br>
+        <a class="middle4_link" href="#">影音報導</a><br>
+        <a class="middle4_link" href="#">精彩圖輯</a>
+      </div>
+      <div class="middle4_p3">
+        <h1 class="middle4_title">藝起推推</h1>
+        <div class="titleLine3"></div>
+        <a class="middle4_link" href="#">藝術團體</a><br>
+        <a class="middle4_link" href="#">藝術個人</a>
+      </div>
+      <div class="middle4_p4">
+        <div class="middle4_p4_top">
+          <h1 class="middle4_title">聯絡我們　Contect us</h1>
+          <div class="titleLine4"></div>
+          <h2>Mail：</h2><a class="mail_link" href="mailto:service@hands-art.tw">service@hands-art.tw</a><br><br>
+          <h2>LINE ID：handsart</h2>
+        </div>
+        <div class="middle4_p4_bottom">
+          <a class="img_link" href="https://www.facebook.com/hands.art.org" target="_blank">
+            <img class="" src=".\images\facebook.png" alt="facebook">
+          </a>
+          <a class="img_link" href="#" target="_blank">
+            <img class="" src=".\images\instagram.png" alt="instagram">
+          </a>
+          <a class="img_link" href="#" target="_blank">
+            <img class="" src=".\images\youtube.png" alt="youtube">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mainPart6">
+    <div class="middle5">
+      <h1 id="copyrightStr"></h1>
+    </div>
+  </div>
+
+  <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+</body>
+</html>
+<!--
+             _______  _        ______   _______     _______  _______ _________
+   |\     /|(  ___  )( (    /|(  __  \ (  ____ \   (  ___  )(  ____ )\__   __/
+   | )   ( || (   ) ||  \  ( || (  \  )| (    \/   | (   ) || (    )|   ) (
+   | (___) || (___) ||   \ | || |   ) || (_____    | (___) || (____)|   | |
+   |  ___  ||  ___  || (\ \) || |   | |(_____  )   |  ___  ||     __)   | |
+   | (   ) || (   ) || | \   || |   ) |      ) |   | (   ) || (\ (      | |
+   | )   ( || )   ( || )  \  || (__/  )/\____) | _ | )   ( || ) \ \__   | |
+   |/     \||/     \||/    )_)(______/ \_______)(_)|/     \||/   \__/   )_(
+
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMs`o+/MMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm-     +symMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMNmmmNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMo           /mmmNNMMMMMMMMM
+MMMMMMMMMMMMMdo-`     `-+hNMMMMMMMMMMMMMMMMMMMMMMMMm-                  `mMMMMMMM
+MMMMMMMMMMMm:             `oNMMMMMMMMMMMMMMMMMMMMMy`                   `mMMMMMMM
+MMMMMMMMMMm`                .dMMMMMMMMMMMMMMMMMMN/                   -oNMMMMMMMM
+MMMMMMMMMM/                  `dMMMMMMMMMMMMMMMMd.                 /hNMMMMMMMMMMM
+MMMMMMMMMM.          -.       -MMMMMMMMMMMMMMMh`                `dMMMMMMMMMMMMMM
+MMMMMMMMMM-         oMMm/     `NMMMMMMMMMMMms-                  sMMMMMMMMMMMMMMM
+MMMMMMMMMMo         -dMMMh.``:hMMMMMMNdyo/.                     mMMMMMMMMMMMMMMM
+MMMMMMMMMMN.          `-/+ossso++/-.`                           NMMMMMMMMMMMMMMM
+MMMMMMMMMMMd                                                    NMMMMMMMMMMMMMMM
+MMMMMMMMMMMMh`                                                  mMMMMMMMMMMMMMMM
+MMMMMMMMMMMMN/                                                 :MMMMMMMMMMMMMMMM
+MMMMMMMMMMMm.                                                 :NMMMMMMMMMMMMMMMM
+MMMMMMMMMMm.                                                 oMMMMMMMMMMMMMMMMMM
+MMMMMMMMMM/                                                -dMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMM`                                              `sMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMM-              //:.                           +NMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMh             .MMMMNdyo:.           `        hMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMh`           yMMMMMMMMMMNmhhyyyyhhmM`       /MMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMN-         -dMMMMMMMMMMMMMMMMMMMMMMN        +MMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMh-       `/dMMMMMMMMMMMMMMMMMMMMMMMMm        dMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMd-      `/yNMMMMMMMMMMMMMMMMMMMMMMMMMMm       :MMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMm      .sNMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm       oMMMMMM 2020.04.29 Joy MMM
+MMMMMMMh     :MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMN`      -NMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMd     /NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM:       `+mMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMM-     `hMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd`         dMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMm.     .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMd/.`   `-oMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMNs/-:/dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+-->
